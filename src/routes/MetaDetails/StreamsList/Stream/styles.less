@@ -99,6 +99,13 @@
         text-overflow: ellipsis;
         color: var(--primary-foreground-color);
     }
+
+    .buttons-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
     
     .icon {
         flex: none;
@@ -109,6 +116,21 @@
         opacity: 0;
         color: var(--primary-foreground-color);
         background-color: var(--secondary-accent-color);
+    }
+
+    .download-button {
+        flex: none;
+        width: 3rem;
+        height: 3rem;
+        padding: 0.7rem;
+        border-radius: 50%;
+        color: var(--primary-foreground-color);
+        background-color: var(--secondary-accent-color);
+    }
+
+    .download-icon {
+        width: 1.6rem;
+        height: 1.6rem;
     }
 
     .menu-icon {
