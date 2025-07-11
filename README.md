@@ -3,7 +3,7 @@
 ![Build](https://github.com/stremio/stremio-web/workflows/Build/badge.svg?branch=development)
 [![Github Page](https://img.shields.io/website?label=Page&logo=github&up_message=online&down_message=offline&url=https%3A%2F%2Fstremio.github.io%2Fstremio-web%2F)](https://stremio.github.io/stremio-web/development)
 
-Stremio is a modern media center that's a one-stop solution for your video entertainment. You discover, watch and organize video content from easy to install addons.
+This Streamio Fork makes it easier to be able to run Stremio Web on VR Web Browsers, especially PCVR like Heresphere, DeoVR, etc. Simply serve the build (or host it somewhere) and open the link in the web browser of your favourite VR Player.
 
 ## Fork Changes
 * Real Debrid is added in whitelist to make sure the download link works
@@ -35,6 +35,11 @@ npm run build
 ```
 
 ## Screenshots
+
+### Download Button
+
+<img width="502" height="456" alt="{4F1C93F4-53F0-4A07-9C08-CC223EA5665E}" src="https://github.com/user-attachments/assets/b5b9323a-35c6-4002-94d0-86ee9b580b3b" />
+
 
 ### Board
 
