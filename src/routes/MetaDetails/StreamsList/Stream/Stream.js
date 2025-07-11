@@ -138,6 +138,14 @@ const Stream = ({ className, videoId, videoReleased, addonName, name, descriptio
         }
     }, [streamLink]);
 
+    const onDownload = React.useCallback((event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (streamLink) {
+            platform.openExternal(streamLink);
+        }
+    }, [streamLink, platform]);
+
     const renderThumbnailFallback = React.useCallback(() => (
         <Icon className={styles['placeholder-icon']} name={'ic_broken_link'} />
     ), []);
@@ -172,11 +180,19 @@ const Stream = ({ className, videoId, videoReleased, addonName, name, descriptio
                     }
                 </div>
                 <div className={styles['description-container']} title={description}>{description}</div>
-                <Icon className={styles['icon']} name={'play'} />
+                <div className={styles['buttons-container']}>
+                    <Icon className={styles['icon']} name={'play'} />
+                    {
+                        streamLink &&
+                            <Button className={styles['download-button']} title={t('CTX_DOWNLOAD_VIDEO')} onClick={onDownload}>
+                                <Icon className={styles['download-icon']} name={'download'} />
+                            </Button>
+                    }
+                </div>
                 {children}
             </Button>
         );
-    }, [thumbnail, progress, addonName, name, description, href, target, download, onClick]);
+    }, [thumbnail, progress, addonName, name, description, href, target, download, onClick, streamLink, onDownload]);
 
     const renderMenu = React.useMemo(() => function renderMenu() {
         return (
@@ -195,9 +211,16 @@ const Stream = ({ className, videoId, videoReleased, addonName, name, descriptio
                             <div className={styles['context-menu-option-label']}>{t('CTX_COPY_STREAM_LINK')}</div>
                         </Button>
                 }
+                {
+                    streamLink &&
+                        <Button className={styles['context-menu-option-container']} title={t('CTX_DOWNLOAD_VIDEO')} onClick={onDownload}>
+                            <Icon className={styles['menu-icon']} name={'download'} />
+                            <div className={styles['context-menu-option-label']}>{t('CTX_DOWNLOAD_VIDEO')}</div>
+                        </Button>
+                }
             </div>
         );
-    }, [copyStreamLink, onClick]);
+    }, [copyStreamLink, onDownload, onClick]);
 
     React.useEffect(() => {
         if (!routeFocused) {
@@ -247,7 +270,8 @@ Stream.propTypes = {
             })
         })
     }),
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    onDownload: PropTypes.func
 };
 
 module.exports = Stream;
