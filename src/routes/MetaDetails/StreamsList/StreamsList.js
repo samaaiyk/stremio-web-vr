@@ -192,6 +192,7 @@ const StreamsList = ({ className, video, type, onEpisodeSearch, ...props }) => {
                                             progress={stream.progress}
                                             deepLinks={stream.deepLinks}
                                             onClick={stream.onClick}
+                                            onDownload={stream.onDownload}
                                         />
                                     ))}
                                     {
