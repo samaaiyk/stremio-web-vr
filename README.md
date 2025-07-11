@@ -12,7 +12,7 @@ This Streamio Fork makes it easier to be able to run Stremio Web on VR Web Brows
 ## Donate to Fork
 * Metamask Address: `0x470b7c461E8f1D10dFC239255971e2105E0973CB`
 * BTC: `bc1q7sgguur5ryjuarwq9hmwka59llg8xx6705rz84`
-* ETC: `0x3f5091DaF9a9b297F2972C4AB0860595A59b10a3`
+* ETH: `0x3f5091DaF9a9b297F2972C4AB0860595A59b10a3`
 
 ## Build
 
